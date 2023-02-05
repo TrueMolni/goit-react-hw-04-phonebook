@@ -7,14 +7,14 @@ const inititalState = { name: '', number: '' };
 const Phonebook = ({ onSubmit }) => {
   const [state, setState] = useState({ ...inititalState });
 
-  handleChange = ({ target }) => {
+  const handleChange = ({ target }) => {
     const { name, value } = target;
     setState(prevState => {
       return { ...prevState, [name]: value };
     });
   };
 
-  handleSubmit = e => {
+  const handleSubmit = e => {
     e.preventDefault();
     onSubmit({ ...state });
     setState({ ...inititalState });
